@@ -1,0 +1,149 @@
+// colors
+$primary: #0094E7;
+$secondary: #f3f3f3;
+$white: #fff ;
+$black: #000;
+
+// import settings
+@import "settings";
+
+// app
+#landingpage .lp-app {
+    position: relative;
+    overflow: hidden;
+
+    .lp-heading-2 {
+        color: $primary;
+    }
+
+    &__boxes {
+        margin: 40px auto 160px;
+        @include flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    &__box {
+        width: 49%;
+        text-align: left;
+
+        .lp-heading-3 {
+            color: #262F38;
+            font-size: 24px;
+            @include poppins;
+            font-weight: 700;
+        }
+
+        &--items {
+            margin-top: 24px;
+            padding-left: 0;
+        }
+
+        &--item {
+            font-size: 16px;
+            @include roboto;
+            margin-top: 10px;
+            color: #535252;
+            display: block;
+            position: relative;
+            padding-left: 32px;
+            line-height: 1.6;
+
+            &::before {
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 2px;
+                width: 20px;
+                height: 20px;
+                background: url('https://i.alza.cz/Foto/or/lp/bezpecne-nakupy/img/check.svg') center no-repeat;
+                background-size: 100%;
+            }
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__btn-wrapper {
+        margin-top: 40px;
+        @include flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        &--button {
+            height: 60px;
+            display: inline-block;
+            margin-top: 8px;
+
+            &:first-of-type {
+                margin-right: 8px;
+            }
+        }
+
+        &--btn-image {
+            max-width: 100%;
+            height: 60px;
+        }
+    }
+
+    .lp-link {
+        color: #535252;
+        font-size: 14px;
+        font-weight: 400;
+        display: inline-block;
+        margin-top: 24px;
+        transition: .3s ease-in-out;
+
+        &:hover {
+            text-decoration: underline;
+            color: $primary;
+        }
+    }
+
+    .app-hand {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 617px;
+    }
+}
+
+// LAYOUT-0
+.layout-0 #articlePage{
+    .lp-app {
+        &__boxes {
+            margin-bottom: 70px;
+        }
+
+        .app-hand {
+            width: 490px;
+        }
+    }
+} 
+    
+// mobile and app
+@media only screen and (max-width: 980px){
+    .mobile #articlePage,
+    .mobileapp #articlePage{
+        .lp-app {
+            &__boxes {
+                margin-top: 48px;
+                margin-bottom: 0;
+            }
+
+            &__box {
+                &:first-of-type {
+                    display: none;
+                }
+
+                width: 100%;
+            }
+
+            .app-hand {
+                display: none;
+            }
+        }
+    }
+}
